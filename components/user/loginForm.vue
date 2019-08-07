@@ -19,7 +19,7 @@
 export default {
   data() {
     return {
-      // 表单数据
+      // 表单数据123456
       form: {
         username: "",
         password: ""
@@ -35,7 +35,7 @@ export default {
       }
     };
   },
-  method: {
+  methods: {
     // 提交登录
     handleLoginSubmit() {
       this.$refs.form.validate(valid => {

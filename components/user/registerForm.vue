@@ -47,7 +47,7 @@ export default {
     return {
       // 表单数据
       form: {
-        username: "11",
+        username: "",
         captcha: "", //验证码
         nickname: "",
         password: "",

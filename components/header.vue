@@ -35,15 +35,28 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  mounted() {
+    // console.log( this.$store.state.user.userInfo.user.nickname)
+  },
+
+  methods: {
+    handleLogout() {
+      // 清除userinfo的数据
+      this.$store.commit("user/clearUserInfo");
+    }
+  }
+};
 </script>
 <style lang="less" scoped>
 .header {
+  width: 1000px;
   height: 60px;
   line-height: 60px;
   border-bottom: 1px solid #ccc;
   box-shadow: 0 3px 3px #eee;
   z-index: 20px;
+  margin: 0 auto;
 }
 .mian {
   width: 100px;
@@ -66,11 +79,18 @@ export default {};
     height: 60px;
     line-height: 60px;
     box-sizing: border-box;
+    &:hover {
+      color: #409eff;
+      border-bottom: 5px #409eff solid;
+    }
   }
 }
 .nuxt-link-exact-acttive {
   background: #409eff;
   color: #fff;
+  &:hover {
+    color: #fff;
+  }
 }
 .el-dropdown-link {
   img {

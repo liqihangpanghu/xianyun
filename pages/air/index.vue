@@ -58,8 +58,26 @@
   </section>
 </template>
 <script>
-import SearchForm from "@/conpoments.air.searchform";
-export default {};
+import SearchForm from "@/components/air/searchForm";
+export default {
+  data() {
+    return {
+      sales: [] // 推荐机票列表
+    };
+  },
+  components: {
+    SearchForm
+  },
+  mounted() {
+    // 请求机票推荐列表
+    this.$axios({
+      url: "/airs/sale"
+    }).then(res => {
+      // 保存到data
+      this.sales = res.data.data;
+    });
+  }
+};
 </script>
 <style lang="less" scoped>
 .air-sale {
